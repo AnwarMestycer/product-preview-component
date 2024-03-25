@@ -17,7 +17,7 @@ $font2: "Fraunces", serif;
 body {
   background-color: hsl(30, 38%, 92%);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   font-family: $font2;
   padding-top: 5rem;
