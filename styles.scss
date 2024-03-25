@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+
+// Define font variables
+$font1: "Montserrat", sans-serif;
+$font2: "Fraunces", serif;
+
+// Global reset
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Body styles
+body {
+  background-color: hsl(30, 38%, 92%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font2;
+  padding-top: 5rem;
+  margin: 0;
+}
+
+// Product card styles
+.product {
+  background-color: white;
+  max-width: 23rem;
+  border-radius: 10px;
+  color: hsl(228, 12%, 48%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  // Product image styles
+  .product-image {
+    width: 100%;
+    height: 15rem;
+    border-radius: 10px 10px 0 0;
+    background: url("/images/image-product-mobile.jpg") no-repeat center center;
+    object-fit: cover;
+    background-size: cover;
+  }
+
+  // Description styles
+  .description {
+    padding: 1rem;
+    max-width: 20rem;
+    // Perfume styles
+    .perfume {
+      font-family: $font1;
+      font-weight: 400;
+      letter-spacing: 0.5rem;
+    }
+
+    // Heading styles
+    h1 {
+      margin: 1rem 0;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: black;
+    }
+
+    // Description text styles
+    .desc {
+      font-family: $font1;
+      padding: 0.5rem;
+    }
+
+    // Price section styles
+    .price {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+
+      // Discounted price styles
+      .discounted {
+        font-family: $font2;
+        font-size: 1.9rem;
+        font-weight: 700;
+        color: hsl(158, 36%, 37%);
+      }
+
+      // Original price styles
+      .original {
+        font-size: 0.8rem;
+        position: relative; // Ensure positioning context for pseudo-element
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 6px;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: hsl(228, 12%, 48%);
+          z-index: 1;
+        }
+      }
+    }
+  }
+
+  // Cart button styles
+  .cart {
+    background-color: hsl(158, 36%, 37%);
+    max-width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 5px;
+    height: 3rem;
+    font-family: $font1;
+    font-weight: 700;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .product {
+    flex-direction: row;
+    max-width: 35rem;
+
+    .product-image {
+      height: 28rem;
+      width: 50rem;
+      border-radius: 10px 0 0 10px;
+      background: url("/images/image-product-desktop.jpg") no-repeat center
+        center;
+      background-size: cover;
+      object-fit: cover;
+    }
+  }
+}
